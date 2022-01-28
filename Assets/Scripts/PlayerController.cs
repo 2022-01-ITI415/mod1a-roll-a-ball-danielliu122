@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
 {
 
-    public float speed = 0;
+    public float speed = 1;
 
     private int count;
 
