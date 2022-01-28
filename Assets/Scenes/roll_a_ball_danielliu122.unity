@@ -1995,8 +1995,8 @@ MonoBehaviour:
   m_MiddleClickAction: {fileID: 861024681}
   m_RightClickAction: {fileID: 1635271670}
   m_ScrollWheelAction: {fileID: 1114035645}
-  m_TrackedDevicePositionAction: {fileID: -1112542725762317224, guid: 1d0164c5b52090c4fb65fc872ca0d060, type: 3}
-  m_TrackedDeviceOrientationAction: {fileID: -2530868068021758935, guid: 1d0164c5b52090c4fb65fc872ca0d060, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 0}
+  m_TrackedDeviceOrientationAction: {fileID: 0}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
 --- !u!114 &1944433112
@@ -2011,7 +2011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 698068363}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1944433113
