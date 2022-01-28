@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
 
     {
 
