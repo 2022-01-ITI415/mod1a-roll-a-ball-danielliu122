@@ -14,12 +14,13 @@ public class MobMovement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity , 10);
+
         if(beingHandled )
         {
             StartCoroutine( HandleIt() );
         }
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity , 25);
     }
 
     private IEnumerator HandleIt()

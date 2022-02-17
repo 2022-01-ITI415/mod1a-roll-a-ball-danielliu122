@@ -39,7 +39,7 @@ public class MobSpawn : MonoBehaviour
             z += Random.Range(2,20);
         }
 
-        return new Vector3(x,y+1,z);
+        return new Vector3(x,y+2,z);
     }
 
     void spawnMob(){

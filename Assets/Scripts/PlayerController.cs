@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private int count;
 
     public TextMeshProUGUI countText;
-    public GameObject winTextObject;
+    public GameObject loseTextObject;
 
     private Rigidbody rb;
 
@@ -37,11 +37,9 @@ public class PlayerController : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-       
-        gameObject.transform.position=Vector3.zero;
-        count = 0;
+        count = 10;
         SetCountText();
-        winTextObject.SetActive(false);
+        loseTextObject.SetActive(false);
     }
 
 
@@ -61,9 +59,9 @@ public class PlayerController : MonoBehaviour
     }
 
     void SetCountText(){
-        countText.text = "Count: " + count.ToString();
-        if (count >= 5){
-            winTextObject.SetActive(true);
+        countText.text = "Health: " + count.ToString();
+        if (count <=0){
+            loseTextObject.SetActive(true);
         }
     }
 
@@ -81,11 +79,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("PickUp")) {
-            other.gameObject.SetActive(false);
-            count = count+1 ;
-            SetCountText();
-        }
+        if (other.gameObject.CompareTag("Mob")) 
+            {
+                other.gameObject.SetActive(false);
+                count = count-1 ;
+                SetCountText();
+                // if (count <=0){
+                //     loseTextObject.SetActive(true);
+                // }
+            }
 
         
     }
