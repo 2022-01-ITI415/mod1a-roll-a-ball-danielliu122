@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
 {
 
-    public float speed = 0;
+    public float speed = 10;
 
     private int count;
 
@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
+       
+        gameObject.transform.position=Vector3.zero;
         count = 0;
         SetCountText();
         winTextObject.SetActive(false);
@@ -72,8 +74,8 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(movementX, 0.0f, movementY);
 
 
-
         rb.AddForce(movement * speed);
+        rb.velocity = movement*25;
 
     }
 
