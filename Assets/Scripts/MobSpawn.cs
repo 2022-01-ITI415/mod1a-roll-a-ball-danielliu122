@@ -5,17 +5,21 @@ using UnityEngine;
 public class MobSpawn : MonoBehaviour
 {
     public GameObject mob;
-    
+    int count= 0;
+    bool inProgress = true;
     // Start is called before the first frame update
     void Start()
     {
-        spawnMob();
+        InvokeRepeating("spawnMob", 2.0f, 1f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (count>16){
+            CancelInvoke() ;
+        }
     }
 
     Vector3 randomPosition()
@@ -39,18 +43,11 @@ public class MobSpawn : MonoBehaviour
             z += Random.Range(2,20);
         }
 
-        return new Vector3(x,y+2,z);
+        return new Vector3(x,y+1,z);
     }
 
     void spawnMob(){
-
-        for (int i=0; i<6; i++){
-            // Instantiate a Mob
-            mob = Instantiate( mob );
-            //
-
-            // Start it at Random insideSphere
             Instantiate(mob, randomPosition(), Quaternion.identity);
+            count+=1;
         }   
-    }
 }

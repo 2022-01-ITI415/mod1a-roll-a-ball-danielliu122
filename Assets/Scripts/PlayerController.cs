@@ -6,8 +6,9 @@ using UnityEngine;
 
 using UnityEngine.InputSystem;
 
-using TMPro;
+using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 
@@ -15,10 +16,12 @@ public class PlayerController : MonoBehaviour
 
     public float speed = 10;
 
-    private int count;
+    public int count;
+    public int score;
 
-    public TextMeshProUGUI countText;
-    public GameObject loseTextObject;
+    public Text CountTextGO;
+    public Text ScoreTextGO;
+    public Text loseTextGO;
 
     private Rigidbody rb;
 
@@ -35,11 +38,17 @@ public class PlayerController : MonoBehaviour
     void Start()
 
     {
+        CountTextGO=GameObject.Find("CountText").GetComponent<Text>();
+        print(CountTextGO.text);
+        ScoreTextGO=GameObject.Find("ScoreText").GetComponent<Text>();
+        loseTextGO=GameObject.Find("loseText").GetComponent<Text>();
 
-        rb = GetComponent<Rigidbody>();
+        rb = gameObject.GetComponent<Rigidbody>();
         count = 10;
+        score = 0;
+        loseTextGO.enabled=false;
+        SetScoreText();
         SetCountText();
-        loseTextObject.SetActive(false);
     }
 
 
@@ -58,11 +67,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void SetCountText(){
-        countText.text = "Health: " + count.ToString();
+    public void SetCountText(){
+        CountTextGO.text = "Health: " + count.ToString();
         if (count <=0){
-            loseTextObject.SetActive(true);
+            loseTextGO.enabled=true;
+            SceneManager.LoadScene("Prototype1");
         }
+    }
+
+    public void SetScoreText(){
+        score+= 1;
+        ScoreTextGO.text= "Score: " + score.ToString();
     }
 
     private void FixedUpdate()
@@ -74,18 +89,18 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(movement * speed);
         rb.velocity = movement*25;
-
+        SetScoreText();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Mob")) 
+        if (other.gameObject.CompareTag("Mob") || other.gameObject.CompareTag("ProjectileCube") ) 
             {
-                other.gameObject.SetActive(false);
+                Destroy(other);
                 count = count-1 ;
                 SetCountText();
                 // if (count <=0){
-                //     loseTextObject.SetActive(true);
+                //     loseText.enabled(true);
                 // }
             }
 
