@@ -17,7 +17,7 @@ public class MobSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (count>16){
+        if (count>10){
             CancelInvoke() ;
         }
     }

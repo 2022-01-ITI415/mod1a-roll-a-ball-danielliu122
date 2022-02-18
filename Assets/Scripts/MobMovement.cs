@@ -14,7 +14,7 @@ public class MobMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {        
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity , 33);
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity , 19);
 
         if(beingHandled )
         {

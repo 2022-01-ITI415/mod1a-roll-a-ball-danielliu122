@@ -23,13 +23,17 @@ public class projectileCubeBehavior : MonoBehaviour
         Vector3 thisPos= gameObject.transform.position;
 
         Vector3 deltaPos= (targetPos-thisPos);
+        Vector3 yForce= Vector3.down*5;
 
         gameObject.GetComponent<Rigidbody>().AddForce(deltaPos);
+        gameObject.GetComponent<Rigidbody>().AddForce(deltaPos);
+        gameObject.GetComponent<Rigidbody>().AddForce(yForce);
 
 
 
         // limit speed
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity , 19);
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity , 45);
+        gameObject.GetComponent<Rigidbody>().AddForce(yForce);
 
     }
 }

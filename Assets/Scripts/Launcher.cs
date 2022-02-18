@@ -13,7 +13,7 @@ public class Launcher : MonoBehaviour
     {
         Vector3 launcherCubePos= gameObject.transform.position;
         Vector3 targetPos= GameObject.Find("Player").transform.position;
-        InvokeRepeating("spawnCube", 1.0f, 1f);
+        InvokeRepeating("spawnCube", 0.5f, 0.5f);
     }
 
     // Update is called once per frame
@@ -36,6 +36,7 @@ public class Launcher : MonoBehaviour
 
         //m_Rigidbody = GetComponent<Rigidbody>();
         projectileCube.GetComponent<Rigidbody>().AddForce(3,7,0);
+        projectileCube.GetComponent<Rigidbody>().AddForce(deltaPos);
         projectileCube.GetComponent<Rigidbody>().AddForce(deltaPos);
     }
 }

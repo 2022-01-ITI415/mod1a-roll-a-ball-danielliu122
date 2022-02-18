@@ -73,6 +73,9 @@ public class PlayerController : MonoBehaviour
             loseTextGO.enabled=true;
             SceneManager.LoadScene("Prototype1");
         }
+        if (count >=2500){
+            SceneManager.LoadScene("Prototype1");
+        }
     }
 
     public void SetScoreText(){
