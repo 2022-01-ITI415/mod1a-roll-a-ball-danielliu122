@@ -14,8 +14,7 @@ public class cubeTreeScript : MonoBehaviour
     // Distance where AppleTree turns around
     public float zEdge = 20f;
 
-      // Distance where AppleTree turns around
-    public float yEdge = 20f;
+
 
     // Chance that the AppleTree will change directions
     public float chanceToChangeDirections = 0.05f;
@@ -45,20 +44,7 @@ public class cubeTreeScript : MonoBehaviour
             speed = -Mathf.Abs(speed); // Move left
         }
 
-        // y 
-        // Basic Movement
-        pos.y += speed * Time.deltaTime;
-        // pos.x += 1.0f * 0.04f;
-        // pos.x += 0.04f;
-        transform.position = pos;
-        // Changing Direction
-        if ( pos.y < -leftAndRightEdge ) {
-            speed = Mathf.Abs(speed); // Move right
-        } 
-        else if ( pos.y > leftAndRightEdge ) {
-            speed = -Mathf.Abs(speed); // Move left
-        }
-
+       
 
 
         // z 

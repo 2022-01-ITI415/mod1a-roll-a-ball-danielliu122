@@ -1445,6 +1445,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 654897317666767750, guid: b03824318d372ee4b94053a33fa65d84, type: 3}
+      propertyPath: projectileCube
+      value: 
+      objectReference: {fileID: 4978413590508405950, guid: 26fb5b430144df845abd1322e01b0830, type: 3}
     - target: {fileID: 654897317666767751, guid: b03824318d372ee4b94053a33fa65d84, type: 3}
       propertyPath: m_Name
       value: CubeTree
@@ -1604,7 +1608,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4834633369251998777, guid: d88b8271596a7fa4d8656cc3e56fd056, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d88b8271596a7fa4d8656cc3e56fd056, type: 3}
 --- !u!1001 &4892106846984398460
 PrefabInstance:
